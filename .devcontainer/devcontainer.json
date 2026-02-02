@@ -1,0 +1,11 @@
+{
+  "name": "Kali Pentest Lab",
+  "image": "kalilinux/kali-rolling",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {},
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "postCreateCommand": "apt update && apt install -y python3-pip golang-go rustc nmap burpsuite metasploit-framework",
+  "remoteUser": "root",
+  "forwardPorts": [8080, 4444, 9001]
+}
