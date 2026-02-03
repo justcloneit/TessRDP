@@ -3,9 +3,12 @@
   "image": "kalilinux/kali-rolling",
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+        "installVnc": true
+    }
   },
-  "postCreateCommand": "apt update && apt install -y python3-pip golang-go rustc nmap burpsuite metasploit-framework",
+  "postCreateCommand": "apt update && apt install -y python3-pip golang-go nmap metasploit-framework",
   "remoteUser": "root",
-  "forwardPorts": [8080, 4444, 9001]
+  "privileged": true,
+  "forwardPorts": [6080, 4444, 9001]
 }
